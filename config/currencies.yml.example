@@ -24,3 +24,16 @@
     accounts:
       -
         address: 1HjfnJpQmANtuW7yr1ggeDfyfe1kDK7rm3
+- id: 3
+  key: ozeety
+  code: oztg
+  symbol: "฿"
+  coin: true
+  quick_withdraw_max: 100
+  rpc: http://username:password@127.0.0.1:18332
+  blockchain: http://167.71.138.75:3001//tx/#{txid}
+  address_url: http://167.71.138.75:3001//address/#{address}
+  assets:
+    accounts:
+      -
+        address: 1HjfnJpQmANtuW7yr1ggeDfyfe1kDK7rm3

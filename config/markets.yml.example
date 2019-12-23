@@ -8,3 +8,13 @@
   ask: {fee: 0, currency: btc, fixed: 4}
   sort_order: 1
   #visible: false     # default to true
+- id: btcoztg
+  code: 4
+  #name: BTC/OZTG      # default name
+  base_unit: btc
+  quote_unit: oztg
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: oztg, fixed: 2}
+  ask: {fee: 0, currency: btc, fixed: 4}
+  sort_order: 1
+  #visible: false     # default to true

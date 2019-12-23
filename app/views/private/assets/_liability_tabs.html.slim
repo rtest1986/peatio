@@ -2,6 +2,7 @@
   ul.nav.nav-tabs
     li.active: a.btc-proof href="#btc-proof" data-toggle="tab" == t('.verify-btc')
     li:        a.cny-proof href="#cny-proof" data-toggle="tab" == t('.verify-cny')
+    li.active: a.oztg-proof href="#oztg-proof" data-toggle="tab" == t('.verify-oztg')
 
   .tab-content
     #btc-proof.tab-pane.active: .trade-wrapper
@@ -11,6 +12,14 @@
           == t("currency.icon.btc")
           = @btc_proof.sum
       = render 'liability_data', account: @btc_account, proof: @btc_proof
+  .tab-content
+    #oztg-proof.tab-pane.active: .trade-wrapper
+      .assets
+        span.title = t('.oztg-assets-total')
+        span.currency
+          == t("currency.icon.oztg")
+          = @oztg_proof.sum
+      = render 'liability_data', account: @oztg_account, proof: @oztg_proof
 
     #cny-proof.tab-pane:        .trade-wrapper
       .assets

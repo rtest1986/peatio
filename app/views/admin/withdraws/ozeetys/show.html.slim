@@ -1,0 +1,30 @@
+.row
+  .col-xs-12
+    .panel.panel-primary
+      .panel-heading
+        span = t('.withdraw', sn: @ozeety.id)
+      .panel-body
+        = description_for :withdraw do
+          = item_for @ozeety, :id
+          = item_for @ozeety, :created_at
+          = item_for @ozeety, :aasm_state_text
+          hr.split
+          = item_for @ozeety.member, :name
+          = item_for @ozeety, :fund_extra
+          = item_for @ozeety, :fund_uid do
+            span = @satoshi.fund_uid.truncate(22)
+          = item_for @ozeety, :amount
+          hr.split
+          = item_for @ozeety, :remark
+          hr.split
+          ul.list-inline.pull-right
+            - if @ozeety.may_reject?
+              li
+                = link_to t('.reject'), url_for([:admin, @satoshi]), class: 'btn btn-danger', method: 'DELETE', confirm: t('.reject_confirm')
+            - if @satoshi.may_process?
+              li
+                = link_to t('.process'), url_for([:admin, @satoshi]), class: 'btn btn-primary', method: 'PATCH'
+
+  .col-xs-12
+    = render partial: 'shared/admin/member', locals: {member: @ozeety.member}
+    = render partial: 'shared/admin/account', locals: {account: @ozeety.account}
